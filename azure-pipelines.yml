@@ -62,4 +62,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
+  inputs:
+    command: push
+    publishVstsFeed: 'SpaceGame-web-Dependencies/Tailspin.SpaceGame.Web'
+    allowPackageConflicts: true
   condition: succeeded()
