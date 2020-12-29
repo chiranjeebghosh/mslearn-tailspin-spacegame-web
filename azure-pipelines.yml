@@ -75,8 +75,8 @@ steps:
     minorVersion: '0'
     patchVersion: '0'
  
-- task: NuGetCommand@2
-  displayName: 'Publish NuGet package'
+- task: NuGetCommand@3
+  displayName: 'Publish NuGet package2'
   inputs:
     command: push
     publishVstsFeed: 'SpaceGame-web-Dependencies/Tailspin.SpaceGame.Web'
