@@ -64,21 +64,3 @@ steps:
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
   
-  task: DotNetCoreCLI@2
-  displayName: 'Pack the project - $(buildConfiguration)'
-  inputs:
-    command: 'pack'
-    projects: '**/*.csproj'
-    arguments: '--no-build --configuration $(buildConfiguration)'
-    versioningScheme: byPrereleaseNumber
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
- 
-- task: NuGetCommand@3
-  displayName: 'Publish NuGet package2'
-  inputs:
-    command: push
-    publishVstsFeed: 'SpaceGame-web-Dependencies/Tailspin.SpaceGame.Web'
-    allowPackageConflicts: true
-  condition: succeeded()
